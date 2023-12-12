@@ -17,11 +17,10 @@ jobs:
       - name: Mac OS run
         run: sw_vers
   dependant-job:
-    runs-on: windows-lates
+    runs-on: windows-latest
     needs: run-shell
     steps:
       - name: windows run
         run: Write-Output " windows output"
       - name: Error step
         run : doesnt exist
-        
