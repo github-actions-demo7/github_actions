@@ -1,5 +1,5 @@
 name: checkout wf
-onn: [push]
+on: [push]
 
 jobs:
   checkout-action-marketplace:
@@ -7,7 +7,6 @@ jobs:
     steps:
     - name : files bfr
       run : ls -a
-    - name: checkout action in simple way
     - uses: actions/checkout@v4
     - name : files after
       run : ls -a
