@@ -1,0 +1,14 @@
+name: dir and shell cmnds
+on: [push]
+
+jobs:
+    display-wd:
+        runs-on: ubuntu-latest
+        steps:
+            - name: dir and shell -unix
+              run : |
+                pwd
+                ls
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
