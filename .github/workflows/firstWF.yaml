@@ -23,4 +23,4 @@ jobs:
       - name: windows run
         run: Write-Output " windows output"
       - name: Error step
-        run : doesnotexists..
+        run : doesnotexists
