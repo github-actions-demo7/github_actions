@@ -1,0 +1,24 @@
+name: dir and shell cmds
+on: [push]
+
+jobs:
+    display-wd-info:
+        runs-on: ubuntu-latest
+        steps:
+             -name: Display dir and shell cmnds
+            run : |
+                pwd
+                ls -a
+                echo $GITHUB_SHA
+                echo $GITHUB_REPOSITORY
+                echo $GITHUB_WORKSPACE
+    # display-wd-info-windows:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         -name: Display dir and shell cmnds
+    #         run : |
+    #             Get-Location
+    #             dir
+    #             echo $env:GITHUB_SHA
+                # echo $env:GITHUB_REPOSITORY
+                # echo $env:GITHUB_WORKSPACE
