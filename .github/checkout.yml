@@ -8,6 +8,6 @@ jobs:
     - name : files bfr
       run : ls -a
     - name: checkout action in simple way
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
     - name : files after
       run : ls -a
