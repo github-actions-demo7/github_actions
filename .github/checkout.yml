@@ -1,0 +1,13 @@
+name: checkout wf
+onn: [push]
+
+jobs:
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps:
+    - name : files bfr
+      run : ls -a
+    - name: checkout action in simple way
+      uses: actions/checkout@v4
+    - name : files after
+      run : ls -a
