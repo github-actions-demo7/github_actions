@@ -2,7 +2,7 @@ name: checkout wf
 onn: [push]
 
 jobs:
-  checkout-action:
+  checkout-action-marketplace:
     runs-on: ubuntu-latest
     steps:
     - name : files bfr
