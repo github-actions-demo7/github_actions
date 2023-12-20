@@ -1,0 +1,20 @@
+name : expression and context
+on: [push]
+run-name: 'exp&con run by @${{github.actor}} and event : ${{github.event}}'
+jobs:
+    exp-con:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Expressions
+              id : expressions
+              run : |
+                echo ${{1}}
+                echo ${{'this is a string'}}
+                echo ${{null}}
+                echo ${{1<2}}
+                echo ${{true && false}}
+            
+            - name : dump context
+              run : |
+                echo '${{toJson(secrets)}}'
+                echo '${{toJson(job)}}'
