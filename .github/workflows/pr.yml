@@ -8,3 +8,4 @@ jobs:
             - run: |
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
+                echo "hello vasii"
