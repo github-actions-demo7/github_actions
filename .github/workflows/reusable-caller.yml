@@ -1,0 +1,16 @@
+name : Reusable workflow- CALLER
+on :
+    workflow_call:
+        inputs:
+            name:
+                description: 'input descrip'
+                type: string
+                default : 'caller-name-details'
+                required : false
+jobs:
+    caller-wf:
+        uses : github-actions-demo7/gactions_reusable/.github/workflows/resuable-called.yaml@main
+        with :
+            name: ${{inputs.name}}
+        secrets:
+            access-token: ${{secrets.ACCESS_TOKEN_CALLER}}
