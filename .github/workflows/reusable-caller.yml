@@ -1,6 +1,6 @@
 name : Reusable workflow- CALLER
 on :
-    workflow_call:
+    workflow_dispatch:
         inputs:
             name:
                 description: 'input descrip'
