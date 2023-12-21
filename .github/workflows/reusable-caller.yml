@@ -3,7 +3,7 @@ on :
     workflow_dispatch:
         inputs:
             name:
-                description: 'input descrip'
+                description: 'input description-caller'
                 type: string
                 default : 'caller-name-details'
                 required : false
