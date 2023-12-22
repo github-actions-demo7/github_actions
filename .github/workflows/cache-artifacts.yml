@@ -12,7 +12,7 @@ jobs:
               uses: actions/cache@v3
               with :
                 path: ~ /.npm
-                key : 'npm-cache-key'
+                key : 'npm-cache'
             - name : cache output
               run : echo '${{toJSON(steps.cache-id)}}'
             - name : install dependencies
