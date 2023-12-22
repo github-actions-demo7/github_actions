@@ -14,7 +14,7 @@ jobs:
                 path: ~ /.npm
                 key : 'npm-cache-key'
             - name : cache output
-              run : echo ${{toJson(steps.cache-id)}}
+              run : echo '${{toJson(steps.cache-id)}}'
             - name : install dependencies
               run: npm i
             - name : Use js github action
