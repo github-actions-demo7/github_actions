@@ -5,8 +5,16 @@ jobs:
     caching-job:
         runs-on: ${{vars.OS}}
         steps:
-            - name: checking out to main brancg
+            - name: checking out to main branch
               uses: actions/checkout@v3
+            - name : using cache action
+              id : 'cache-id'
+              uses: actions/cache@v3
+              with :
+                path: ~ /.npm
+                key : 'npm-cache-key'
+            - name : cache output
+              run : echo ${{toJson(steps.cache-id)}}
             - name : install dependencies
               run: npm i
             - name : Use js github action
