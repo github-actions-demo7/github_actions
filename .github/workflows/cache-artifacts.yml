@@ -11,7 +11,7 @@ jobs:
               id : 'cache-id'
               uses: actions/cache@v3
               with :
-                path: ~ /.npm
+                path: ~/.npm
                 key : 'npm-cache'
             - name : cache output
               run : echo '${{toJSON(steps.cache-id)}}'
