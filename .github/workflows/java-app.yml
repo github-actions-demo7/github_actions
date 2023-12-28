@@ -44,5 +44,7 @@ jobs:
                 app-name: "github-actions-assign-1"
                 publish-profile : ${{secrets.AZURE_PUB_PROF_VASI}}
                 package: '*.jar'
+            - name : list the files after depoly
+              run : ls -a
               
             
