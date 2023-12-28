@@ -11,7 +11,7 @@ jobs:
               with:
                 java-version: 17
             - name : Build maven 
-              run : mvn -B pacakage -- file pom.xml
+              run : mvn -B package -- file pom.xml
             - name : List dir
               run : ls -a
             - name : List dir inside target folder
