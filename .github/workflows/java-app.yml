@@ -1,0 +1,21 @@
+name: Sample java app
+on : [workflow_dispatch]
+jobs:
+    java-app:
+        runs-on: ubuntu-latest
+        steps:
+            - name : checkout to main branch
+              uses : actions/checkout@v3
+            - name : Java app
+              uses : actions/setup-java@v1
+              with:
+                java-version: 17
+            - name : Build maven 
+              run : mvn -B pacakage -- file pom.xml
+            - name : List dir
+              run : ls -a
+            - name : List dir inside target folder
+              run : |
+                cd target
+                ls -a
+
