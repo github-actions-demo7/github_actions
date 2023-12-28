@@ -23,7 +23,7 @@ jobs:
               uses : actions/upload-artifact@v3
               with:
                 name: maven-artifact
-                path: 
+                path: '${{ github.workspace }}/target/*.jar'
             
               
             
