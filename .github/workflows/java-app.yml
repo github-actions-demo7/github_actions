@@ -1,5 +1,5 @@
 name: Sample java app
-on : [workflow_dispatch]
+on : [push]
 jobs:
     java-app:
         runs-on: ubuntu-latest
