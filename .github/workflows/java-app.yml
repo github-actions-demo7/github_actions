@@ -32,6 +32,9 @@ jobs:
                 path: '${{ github.workspace }}/target/*.jar'
     java-app-deploy:
         needs : java-app-build
+        environment:
+            name: 'Production'
+            url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
         runs-on: ubuntu-latest
         steps:
             - name : artifact download
@@ -39,9 +42,11 @@ jobs:
               with:
                 name: maven-artifact
             - name : deploy to azure web apps
+              id: deploy-to-webapp
               uses : azure/webapps-deploy@v2
               with:
                 app-name: "github-actions-assign-1"
+                slot-name: 'Production'
                 publish-profile : ${{secrets.AZURE_PUB_PROF_VASI}}
                 package: '*.jar'
             - name : list the files after depoly
