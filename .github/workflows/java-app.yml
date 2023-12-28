@@ -1,7 +1,7 @@
 name: Sample java app
 on : [push]
 jobs:
-    java-app:
+    java-app-build:
         runs-on: ubuntu-latest
         steps:
             - name : checkout to main branch
@@ -30,7 +30,19 @@ jobs:
               with:
                 name: maven-artifact
                 path: '${{ github.workspace }}/target/*.jar'
-            
+    java-app-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name : artifact download
+              uses : actions/download-artifact@v3
+              with:
+                name: maven-artifact
+            - name : deploy to azure web apps
+              uses : azure/webapps-deploy@v2
+              with:
+                app-name: "github-actions-assign-1"
+                publish-profile : ${{secrets.AZURE_PUB_PROF_VASI}}
+                package: '*.jar'
               
             
 
