@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'github-actions-assign-1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_733A8214D833419A8CEEFE7DEAB9FEB9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6A242C5575BC4B9BB34F5CFE8500374C }}
           package: '*.jar'
