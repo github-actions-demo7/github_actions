@@ -16,7 +16,7 @@ jobs:
                 path: ~/.m2/repository
                 key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
             - name : Build maven 
-              run : mvn -B package --file pom.xml
+              run : mvn clean install
             - name : List dir
               run : ls -a
             - name : List dir inside target folder
@@ -31,6 +31,7 @@ jobs:
                 name: maven-artifact
                 path: '${{ github.workspace }}/target/*.jar'
     java-app-deploy:
+        needs : java-app-build
         runs-on: ubuntu-latest
         steps:
             - name : artifact download
