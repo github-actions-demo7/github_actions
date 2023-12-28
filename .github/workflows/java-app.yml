@@ -18,4 +18,13 @@ jobs:
               run : |
                 cd target
                 ls -a
+                pwd
+            - name : Storing artifacts
+              uses : actions/upload-artifact@v3
+              with:
+                name: maven-artifact
+                path: 
+            
+              
+            
 
