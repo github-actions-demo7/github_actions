@@ -24,7 +24,7 @@ jobs:
                 cd target
                 ls -a
                 pwd
-                echo '${{ github.workspace }}''
+                echo '${{ github.workspace }}'
             - name : Storing artifacts
               uses : actions/upload-artifact@v3
               with:
