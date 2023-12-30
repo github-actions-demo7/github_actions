@@ -1,0 +1,11 @@
+name : reusable wf for java app
+on:
+    workflow_dispatch:
+jobs:
+    Reusing-java-app-wf:
+        runs-on: ubuntu-latest
+        steps:
+            - name : Calling the java app wf
+              uses : github-actions-demo7/.github/workflows/java-app.yml@main
+              with:
+                secrets: inherit
