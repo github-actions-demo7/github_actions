@@ -9,9 +9,7 @@ on:
                 required : false
 jobs:
     Reusing-java-app-wf:
-        runs-on: ubuntu-latest
-        steps:
-            - name : Calling the java app wf
               uses : github-actions-demo7/github_actions/.github/workflows/java-app.yml@main
-              with:
-                secrets: inherit
+              with :
+                name: ${{inputs.name}}
+              secrets: inherit
