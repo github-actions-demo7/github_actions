@@ -1,6 +1,12 @@
 name : reusable wf for java app
 on:
     workflow_dispatch:
+        inputs:
+            name:
+                description: 'input description-caller'
+                type: string
+                default : 'caller-name-details'
+                required : false
 jobs:
     Reusing-java-app-wf:
         runs-on: ubuntu-latest
