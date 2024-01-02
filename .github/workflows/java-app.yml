@@ -1,11 +1,12 @@
 name: Sample java app
 on : 
-    workflow_call:
-        inputs:
-            name:
-                description: 'input description'
-                type: string
-                required : false
+    # workflow_call:
+    #     inputs:
+    #         name:
+    #             description: 'input description'
+    #             type: string
+    #             required : false
+    workflow_dispatch:
 jobs:
     java-app-build:
         runs-on: ubuntu-latest
